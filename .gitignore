@@ -1,0 +1,22 @@
+﻿# Ignore Visual Studio temp files, build results, etc.
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+
+# Others
+*.log
+*.vsidx
+*.dbmdl
+*.pdb
+
+# Node/NPM
+node_modules/
+
+# Environment files
+.env
