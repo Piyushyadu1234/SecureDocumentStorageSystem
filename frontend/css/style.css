@@ -1,1 +1,205 @@
-﻿
+﻿/* style.css - Upgraded Modern Version */
+
+/* CSS Variables for easy theming */
+:root {
+    --primary-color: #3b82f6; /* Blue-500 */
+    --primary-hover: #2563eb; /* Blue-600 */
+    --bg-color: #f9fafb; /* Gray-50 */
+    --text-color: #111827; /* Gray-900 */
+    --border-color: #d1d5db; /* Gray-300 */
+    --input-bg: #ffffff;
+    --error-color: #ef4444; /* Red-500 */
+    --success-color: #22c55e; /* Green-500 */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.container {
+    background-color: var(--input-bg);
+    max-width: 700px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    padding: 40px 50px;
+    transition: box-shadow 0.3s ease;
+}
+
+    .container:hover {
+        box-shadow: 0 12px 30px var(--shadow-color);
+    }
+
+h1, h2 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.3rem;
+    margin-top: 2rem;
+}
+
+form {
+    margin-top: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline-offset: 2px;
+}
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="file"]:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 8px var(--primary-color);
+        outline: none;
+    }
+
+button {
+    margin-top: 20px;
+    padding: 14px 32px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+}
+
+    button:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    button:active {
+        transform: translateY(0);
+        box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+    }
+
+.document-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 25px;
+}
+
+    .document-list li {
+        background-color: #f3f4f6; /* Gray-100 */
+        padding: 15px 20px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+    }
+
+        .document-list li:hover {
+            background-color: #e0e7ff; /* Indigo-100 */
+        }
+
+        .document-list li span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            max-width: 70%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        text-decoration: underline;
+        color: var(--primary-hover);
+    }
+
+/* Messages */
+.message {
+    margin-top: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    user-select: none;
+}
+
+    .message.error {
+        background-color: #fee2e2; /* Red-100 */
+        color: var(--error-color);
+        border: 2px solid var(--error-color);
+    }
+
+    .message.success {
+        background-color: #dcfce7; /* Green-100 */
+        color: var(--success-color);
+        border: 2px solid var(--success-color);
+    }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}

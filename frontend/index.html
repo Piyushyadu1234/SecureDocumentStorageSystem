@@ -1,21 +1,57 @@
-﻿<!-- /frontend/index.html -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login/Register</title>
-    <script src="js/auth.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secure Document Storage System</title>
+    <style>
+        /* minimal styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input, button {
+            margin: 5px 0;
+            padding: 8px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="w-full max-w-md p-8 space-y-4 bg-white rounded-xl shadow">
-        <h2 class="text-xl font-semibold">Secure Document Storage</h2>
-        <input id="username" class="w-full p-2 border rounded" placeholder="Username" />
-        <input id="password" type="password" class="w-full p-2 border rounded" placeholder="Password" />
-        <button onclick="login()" class="w-full bg-blue-500 text-white p-2 rounded">Login</button>
-        <button onclick="register()" class="w-full bg-green-500 text-white p-2 rounded">Register</button>
-        <p id="message" class="text-sm text-red-500"></p>
-    </div>
+<body>
+    <h1>Secure Document Storage System</h1>
+
+    <section id="auth-section">
+        <h2>Login / Register</h2>
+        <input id="username" type="text" placeholder="Username" />
+        <br />
+        <input id="password" type="password" placeholder="Password" />
+        <br />
+        <button id="login-btn">Login</button>
+        <button id="register-btn">Register</button>
+        <p id="auth-msg"></p>
+    </section>
+
+    <section id="upload-section" class="hidden">
+        <h2>Upload Document</h2>
+        <input id="file-input" type="file" />
+        <br />
+        <button id="upload-btn">Upload</button>
+        <p id="upload-msg"></p>
+    </section>
+
+    <section id="documents-section" class="hidden">
+        <h2>Your Documents</h2>
+        <ul id="documents-list"></ul>
+    </section>
+
+    <script src="app.js"></script>
 </body>
 </html>
